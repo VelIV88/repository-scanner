@@ -4,17 +4,17 @@
 
 ### Сборка.
 ``` bash
-docker build -t gitlleaks-scanner .
+docker build -t gitleaks-scanner .
 ```
 
 ### Запуск.
 Клонируем репозитории для сканирования в каталог `./repositories/`.  
 Запуск сканирования всех папок в каталоге `./repositories/` (результаты попадут в каталог `/reports/*.json`):
 ``` bash
-docker run --rm -v $(pwd):/workspace gitlleaks-scanner
+docker run --rm -v $(pwd):/workspace gitleaks-scanner
 ```
 Для сканирования конкретного репозитория передаём `REPOSITORY_NAME` папки из `./repositories/` параметром (результат попадёт в файл `/reports/REPOSITORY_NAME.json`):
 ``` bash
-docker run --rm -v $(pwd):/workspace gitlleaks-scanner REPOSITORY_NAME
+docker run --rm -v $(pwd):/workspace gitleaks-scanner REPOSITORY_NAME
 ```
 В консоль будут выводиться результаты сканирования от gitleaks, в каталоге `/reports/` останутся только отредактированные отчеты с найденными кредами
